@@ -1,0 +1,45 @@
+﻿<Window x:Class="OOO_StroiMaterial.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOO_StroiMaterial"
+        mc:Ignorable="d"
+          Title="MainWindow" Height="500" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="81*"></ColumnDefinition>
+            <ColumnDefinition Width="19*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="441*"></RowDefinition>
+            <RowDefinition Height="59*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1"/>
+        <Button Grid.Column="1" Content="Добавить\изменить товары" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Height="47" Width="140" FontSize="10" Background="DeepSkyBlue" Click="Button_Click"/>
+        <Button Grid.Column="1" Content="Вывести таблицу" HorizontalAlignment="Center" VerticalAlignment="Top" Height="46" Width="140" FontSize="10" Margin="0,113,0,0"  Background="DeepSkyBlue"/>
+        <Button Grid.Column="1"  Click="btnDeleteTrip" Content="Удалить товары" HorizontalAlignment="Center" Margin="0,189,0,0" VerticalAlignment="Top" Height="47" Width="140" FontSize="10" Background="DeepSkyBlue"/>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Goods}" Background="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="Артикул"
+                    Binding="{Binding Articul}"
+                    />
+                <DataGridTextColumn
+                    Header="Имя продукта"
+                    Binding="{Binding ProductName}" />
+                <DataGridTextColumn
+                    Header="Цена"
+                    Binding="{Binding Price}" />
+                <DataGridTextColumn
+                    Header="Производитель"
+                    Binding="{Binding Manufacturer_id}" />
+
+            </DataGrid.Columns>
+
+
+        </DataGrid>
+        <Button Click="btnExit" Grid.Column="1" Content="Выйти" HorizontalAlignment="Center" VerticalAlignment="Center" Height="46" Width="140" FontSize="16"  Background="DeepSkyBlue" Grid.Row="1"/>
+
+    </Grid>
+</Window>
